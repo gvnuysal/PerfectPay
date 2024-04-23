@@ -66,6 +66,84 @@
                 </VerticalStackLayout>
             </Grid>
         </Frame>
+        <Grid Grid.Row="1"
+              Margin="0,15,0,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".3*"></ColumnDefinition>
+                <ColumnDefinition Width=".7*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Text="Enter your bill: $"
+                   TextColor="{StaticResource LigthFont}"
+                   VerticalOptions="Center"></Label>
+            <Entry x:Name="txtBill"
+                   Grid.Column="1"
+                   BackgroundColor="#444444"
+                   Keyboard="Numeric"
+                   Text="0.0"
+                   TextColor="{StaticResource LigthFont}"
+                   VerticalOptions="Center"
+                   Completed="txtBill_Completed"></Entry>
+            <Label Grid.Row="1"
+                   Text="Choose your tip"
+                   TextColor="{StaticResource LigthFont}"
+                   VerticalOptions="Center"
+                   ></Label>
+            <HorizontalStackLayout Grid.Row="1"
+                                   Grid.Column="1"
+                                   HeightRequest="70"
+                                   HorizontalOptions="Center"
+                                   Spacing="10">
+                <Button Text="%10" WidthRequest="70" Clicked="Button_Clicked"/>
+                <Button Text="%15" WidthRequest="70" Clicked="Button_Clicked"/>
+                <Button Text="%20  " WidthRequest="70" Clicked="Button_Clicked"/>
+            </HorizontalStackLayout>
+            <Label x:Name="lblTip"
+                   Grid.Row="2"
+                   Text="Tip: 0%"
+                   TextColor="{StaticResource LigthFont}"
+                   VerticalOptions="Center"/>
+            <Slider x:Name="slTip"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Maximum="50"
+                    Minimum="0"
+                    ValueChanged="slTip_ValueChanged"/>
+            <Label Grid.Row="3"
+                   Text="Split the total"
+                   TextColor="{StaticResource LigthFont}"
+                   VerticalOptions="Center"/>
+            <HorizontalStackLayout Grid.Row="3"
+                                   Grid.Column="1"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center">
+                <Button x:Name="btnMinus"
+                        Text="-"
+                        WidthRequest="70" Clicked="btnMinus_Clicked"/>
+                <Label x:Name="lblNoPersons"
+                       Margin="-5,0,-5,0"
+                       BackgroundColor="{StaticResource SectionsColor}"
+                       FontSize="25"
+                       HeightRequest="50"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="1"
+                       TextColor="{StaticResource LigthFont}"
+                       VerticalOptions="Center"
+                       VerticalTextAlignment="Center"
+                       WidthRequest="100"/>
+                <Button x:Name="btnPlus"
+                        Text="+"
+                        WidthRequest="70"
+                        Clicked="btnPlus_Clicked"/>
+            </HorizontalStackLayout>
+        </Grid>
     </Grid>
 
 </ContentPage>
